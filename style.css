@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+ul {
+    list-style: none;
+}
+
 body {
     background-image: url(./assets/bg.jpg);
     background-position: top center;
@@ -19,7 +23,7 @@ body * {
 
 header {
     padding-top: 32px;
-    height: calc(120px - 32px);
+    height: calc(120px + 32px);
 }
 
 header div {
@@ -45,13 +49,8 @@ main {
     max-width: 580px;
     width: 90%;
     margin: 32px auto;
-    margin-top: 32px;
     display: grid;
     gap: 24px;
-}
-
-ul {
-    list-style: none;
 }
 
 section {
@@ -92,27 +91,28 @@ section ul li:hover {
 }
 
 .games-list img {
-    width: 120px;
+    width: 90px;
     border-radius: 8px;
 }
 
 .channel-list img {
-    width: 70%;
     border-radius: 50%;     
+    width: 70%;
+    border: 1px solid #443E54;
 }
 
 .social-list img {
-    width: 50%;
+    width: 70%;
     height: 50%px;
     border: 1px solid #443E54;
 }
 
 header div {
-    animation: fromTop 7s 2s backwards;
+    animation: fromTop .7s .2s backwards;
 }
 
 main section {
-    animation: fromBottom .7s;
+    animation: fromBottom .7s backwards;
 }
 
 main section:nth-child(1) {
@@ -120,12 +120,13 @@ main section:nth-child(1) {
 }
 
 main section:nth-child(2) {
-    animation-delay: .4s;
+    animation-delay: .3s;
 }
 
 main section:nth-child(3) {
-    animation-delay: .8s;
+    animation-delay: .6s;
 }
+
 @keyframes fromTop {
     from {
         opacity: 0;
@@ -141,12 +142,11 @@ main section:nth-child(3) {
 @keyframes fromBottom {
     from {
         opacity: 0;
-        transform: translateX(-30y);
+        transform: translateY(30y);
     }
 
     to {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     }
-
 }
